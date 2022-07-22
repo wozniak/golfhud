@@ -192,7 +192,7 @@ Scheme
 		MainMenu.ArmedTextColor		"200 200 200 255"	[$WIN32]
 		MainMenu.ArmedTextColor		"White"				[$X360]
 		MainMenu.DepressedTextColor	"192 186 80 255"
-		MainMenu.MenuItemHeight		"30"				[$WIN32]
+		MainMenu.MenuItemHeight		"40"				[$WIN32]
 		MainMenu.MenuItemHeight			"22"				[$X360]
 		MainMenu.MenuItemHeight_hidef	"32"				[$X360]
 		MainMenu.Inset				"32"
@@ -286,7 +286,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$POSIX]
+				"name"		"Comic Sans MS" [!$POSIX]
 				"name"		"Verdana Bold" [$POSIX]
 				"tall"		"16"
 				"weight"	"1000"
@@ -397,7 +397,7 @@ Scheme
 			"1"	[$WIN32]
 			{
 				"name"		"Segoe UI Light" 
-				"tall"		"35"
+				"tall"		"48"
 				"weight"	"200"
 				"antialias" "1"
 			}
