@@ -2,19 +2,19 @@
 {
 	"1"
 	{
-		"label" "#GameUI_GameMenu_ResumeGame"
+		"label" "resume"
 		"command" "ResumeGame"
 		"OnlyInGame" "1"
 	}
 	"2"
 	{
-		"label" "#GameUI_GameMenu_Disconnect"
+		"label" "disconnect"
 		"command" "Disconnect"
 		"OnlyInGame" "1"
 	}
 	"3"
 	{
-		"label" "#GameUI_GameMenu_PlayerList"
+		"label" "open player list"
 		"command" "OpenPlayerListDialog"
 		"OnlyInGame" "1"
 	}
@@ -26,22 +26,22 @@
 	}
 	"5"
 	{
-		"label" "#GameUI_GameMenu_FindServers"
+		"label" "find servers"
 		"command" "OpenServerBrowser"
 	}
 	"6"
 	{
-		"label" "#GameUI_GameMenu_CreateServer"
+		"label" "create server"
 		"command" "OpenCreateMultiplayerGameDialog"
 	}
 	"7"
 	{
-		"label" "#GameUI_GameMenu_Options"
+		"label" "options"
 		"command" "OpenOptionsDialog"
 	}
 	"8"
 	{
-		"label" "#GameUI_GameMenu_Quit"
+		"label" "quit"
 		"command" "Quit"
 	}
 }
