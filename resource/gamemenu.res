@@ -36,25 +36,10 @@
 	}
 	"7"
 	{
-		"label" "#GameUI_GameMenu_Achievements"
-		"command" "OpenCSAchievementsDialog"
-	}
-	"8"
-	{
-		"label" "#GameUI_ReportBug"
-		"command" "engine bug"
-	}
-	"9"
-	{
-		"label" "#GameUI_LaunchBenchmark"
-		"command" "OpenBenchmarkDialog"
-	}
-	"10"
-	{
 		"label" "#GameUI_GameMenu_Options"
 		"command" "OpenOptionsDialog"
 	}
-	"11"
+	"8"
 	{
 		"label" "#GameUI_GameMenu_Quit"
 		"command" "Quit"
