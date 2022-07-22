@@ -396,14 +396,14 @@ Scheme
 			}
 			"1"	[$WIN32]
 			{
-				"name"		"Yu Gothic UI Light" 
+				"name"		"Segoe UI Light" 
 				"tall"		"35"
 				"weight"	"200"
 				"antialias" "1"
 			}
 			"1"	[$X360]
 			{
-				"name"		"Yu Gothic UI Light"
+				"name"		"Segoe UI Light"
 				"tall"			"14"
 				"tall_hidef"	"20"
 				"weight"	"1200"
