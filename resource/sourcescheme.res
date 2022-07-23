@@ -272,6 +272,7 @@ Scheme
 				"outline"	 "1"
 			}
 		}
+		//Console text font
 		"Default"
 		{
 			"1"
@@ -286,7 +287,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Comic Sans MS" [!$POSIX]
+				"name"		"Tahoma" [!$POSIX]
 				"name"		"Verdana Bold" [$POSIX]
 				"tall"		"16"
 				"weight"	"1000"

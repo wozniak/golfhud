@@ -200,11 +200,11 @@ Scheme
 		"Hostage_Yellow"	"Panel.FgColor"
 		"HudIcon_Green"		"0 160 0 255"
 		"HudIcon_Red"		"160 0 0 255"
-
 		// CHudMenu
-		"ItemColor"		"255 167 42 200"	// default 255 167 42 255
-		"MenuColor"		"233 208 173 255"
-		"MenuBoxBg"		"0 0 0 100"
+
+		"ItemColor"		"95 73 99 255"	// default 255 167 42 255
+		"MenuColor"		"163 137 172 255"
+		"MenuBoxBg"		"0 0 0 50"
 
 		// weapon selection colors
 		"SelectionNumberFg"		"255 220 0 200"
