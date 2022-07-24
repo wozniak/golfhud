@@ -25,9 +25,9 @@ Scheme
 
 		"Blank"				"0 0 0 0"
 
-		"GMod_BG_Opaque"	"108 111 114 250"
-		"GMod_BG"			"108 111 114 0" // SRCDS cannot do transparency, so we gotta replace Blank with this.
-		"GMod_WhiteBlank"	"255 255 255 0"
+		"BG_Opaque"		"19 23 28 250"
+		"BG"			"19 23 28 0" // SRCDS cannot do transparency, so we gotta replace Blank with this.
+		"WhiteBlank"	"255 255 255 0"
 
 		"SteamLightGreen"			"157 194 80 255"
 		"AchievementsLightGrey"		"79 79 79 255"
@@ -42,11 +42,11 @@ Scheme
 	BaseSettings
 	{
 		// vgui_controls color specifications
-		Border.Bright					"200 200 200 255"	// the lit side of a control
-		Border.Dark						"40 40 40 198"		// the dark/unlit side of a control
+		Border.Bright					"200 200 200 0"	// the lit side of a control
+		Border.Dark						"40 40 40 0"		// the dark/unlit side of a control
 		Border.Selection				"Black"			// the additional border color for displaying the default/selected button
-		Border.DarkSolid				"40 40 40 255"
-		Border.Subtle					"80 80 80 255"
+		Border.DarkSolid				"40 40 40 0"
+		Border.Subtle					"80 80 80 0"
 
 		Button.TextColor				"82 82 82 255"
 		Button.BgColor					"227 227 227 255"
@@ -71,26 +71,26 @@ Scheme
 
 		ComboBoxButton.ArrowColor		"81 81 81 255"
 		ComboBoxButton.ArmedArrowColor	"110 110 110 255"
-		ComboBoxButton.BgColor			"GMod_WhiteBlank"
-		ComboBoxButton.DisabledBgColor	"GMod_WhiteBlank"
+		ComboBoxButton.BgColor			"WhiteBlank"
+		ComboBoxButton.DisabledBgColor	"WhiteBlank"
 
 		Frame.TitleTextInsetX			16
 		Frame.ClientInsetX				8
 		Frame.ClientInsetY				6
-		Frame.BgColor					"GMod_BG_Opaque"	[$WIN32]
+		Frame.BgColor					"BG_Opaque"	[$WIN32]
 		Frame.BgColor					"80 80 80 192"		[$X360]
-		Frame.OutOfFocusBgColor			"97 100 102 240"	[$WIN32]
+		Frame.OutOfFocusBgColor			"BG_Opaque"	[$WIN32]
 		Frame.OutOfFocusBgColor			"80 80 80 192"		[$X360]
 		Frame.FocusTransitionEffectTime	"0.3"							// time it takes for a window to fade in/out on focus/out of focus
 		Frame.TransitionEffectTime		"0.3"				[$WIN32]	// time it takes for a window to fade in/out on open/close
 		Frame.TransitionEffectTime		"0.2"				[$X360]		// time it takes for a window to fade in/out on open/close
 		Frame.AutoSnapRange				"0"
-		FrameGrip.Color1				"200 200 200 196"
-		FrameGrip.Color2				"0 0 0 196"
+		FrameGrip.Color1				"200 200 200 0"
+		FrameGrip.Color2				"0 0 0 0"
 		FrameTitleButton.FgColor		"200 200 200 196"
-		FrameTitleButton.BgColor		"GMod_BG"
+		FrameTitleButton.BgColor		"BG"
 		FrameTitleButton.DisabledFgColor	"255 255 255 192"
-		FrameTitleButton.DisabledBgColor	"GMod_BG"
+		FrameTitleButton.DisabledBgColor	"BG"
 		FrameSystemButton.FgColor		"Blank"
 		FrameSystemButton.BgColor		"Blank"
 		FrameSystemButton.Icon			""
@@ -98,9 +98,9 @@ Scheme
 		FrameTitleBar.Font				"UiBold"		[$WIN32]
 		FrameTitleBar.Font				"DefaultLarge"	[$WIN32]
 		FrameTitleBar.TextColor			"255 255 255 204"
-		FrameTitleBar.BgColor			"GMod_BG"
+		FrameTitleBar.BgColor			"BG"
 		FrameTitleBar.DisabledTextColor	"255 255 255 91"
-		FrameTitleBar.DisabledBgColor	"GMod_BG"
+		FrameTitleBar.DisabledBgColor	"BG"
 
 		GraphPanel.FgColor				"White"
 		GraphPanel.BgColor				"TransparentBlack"
@@ -109,15 +109,15 @@ Scheme
 		Label.TextColor					"OffWhite"
 		Label.TextBrightColor			"White"
 		Label.SelectedTextColor			"White"
-		Label.BgColor					"GMod_BG"
+		Label.BgColor					"BG"
 		Label.DisabledFgColor1			"110 110 110 255"
 		Label.DisabledFgColor2			"50 50 50 255"
 
-		ListPanel.TextColor					"Black"
+		ListPanel.TextColor					"White"
 		ListPanel.TextBgColor				"Blank"
-		ListPanel.BgColor					"White"
-		ListPanel.SelectedTextColor			"White"
-		ListPanel.SelectedBgColor			"0 168 255 204"
+		ListPanel.BgColor					"9 13 18 250"
+		ListPanel.SelectedTextColor			"Black"
+		ListPanel.SelectedBgColor			"228 3 111 204"
 		ListPanel.OutOfFocusSelectedTextColor	"Black"
 		ListPanel.SelectedOutOfFocusBgColor		"132 183 241 100"
 		ListPanel.EmptyListInfoTextColor	"Black"
@@ -129,7 +129,7 @@ Scheme
 		Menu.TextInset					"6"
 
 		Panel.FgColor					"DullWhite"
-		Panel.BgColor					"GMod_BG"
+		Panel.BgColor					"BG"
 
 		ProgressBar.FgColor				"White"
 		ProgressBar.BgColor				"TransparentBlack"
@@ -146,7 +146,7 @@ Scheme
 		RichText.TextColor				"OffWhite"
 		RichText.BgColor				"TransparentBlack"
 		RichText.SelectedTextColor		"White"
-		RichText.SelectedBgColor		"0 168 255 204"
+		RichText.SelectedBgColor		"228 3 111 204"
 
 		ScrollBar.Wide					15
 
@@ -167,7 +167,7 @@ Scheme
 		SectionedListPanel.BrightTextColor	"40 40 40 255"
 		SectionedListPanel.BgColor			"White"
 		SectionedListPanel.SelectedTextColor			"White"
-		SectionedListPanel.SelectedBgColor				"0 168 255 204"
+		SectionedListPanel.SelectedBgColor				"228 3 111 204"
 		SectionedListPanel.OutOfFocusSelectedTextColor	"Black"
 		SectionedListPanel.OutOfFocusSelectedBgColor	"132 183 241 100"
 
@@ -183,7 +183,7 @@ Scheme
 		TextEntry.DisabledTextColor	"128 128 128 255"
 		TextEntry.DisabledBgColor	"192 192 192 255"
 		TextEntry.SelectedTextColor	"10 10 10 255"
-		TextEntry.SelectedBgColor	"0 168 255 204"
+		TextEntry.SelectedBgColor	"228 3 111 204"
 		TextEntry.OutOfFocusSelectedBgColor	"132 183 241 100"
 		TextEntry.FocusEdgeColor	"0 0 0 196"
 
@@ -891,15 +891,19 @@ Scheme
 
 		FrameBorder
 		{
-			// rounded corners for frames
+			//rounded corners for frames
 			//"backgroundtype" "2"
-
 			Left
 			{
 				"1"
 				{
-					"color" "Border.DarkSolid"
+					"color" "0 0 0 80" //"Border.Dark"
 					"offset" "0 0"
+				}
+				"2"
+				{
+					"color" "93 56 99 50" //"Border.Dark"
+					"offset" "1 1"
 				}
 			}
 
@@ -907,8 +911,13 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.DarkSolid"
+					"color" "0 0 0 80" //"Border.Dark"
 					"offset" "0 0"
+				}
+				"2"
+				{
+					"color" "93 56 99 50" //"Border.Dark"
+					"offset" "1 1"
 				}
 			}
 
@@ -916,8 +925,13 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.DarkSolid"
+					"color" "0 0 0 80" //"Border.Dark"
 					"offset" "0 0"
+				}
+				"2"
+				{
+					"color" "93 56 99 50" //"Border.Dark"
+					"offset" "2 2"
 				}
 			}
 
@@ -925,8 +939,13 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.DarkSolid"
+					"color" "0 0 0 80" //"Border.Dark"
 					"offset" "0 0"
+				}
+				"2"
+				{
+					"color" "93 56 99 50" //"Border.Dark"
+					"offset" "2 2"
 				}
 			}
 		}
