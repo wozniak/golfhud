@@ -24,8 +24,12 @@ Scheme
 		"Black"				"0 0 0 255"
 
 		"Blank"				"0 0 0 0"
-		
-		"SteamLightGreen"	"157 194 80 255"
+
+		"GMod_BG_Opaque"	"108 111 114 250"
+		"GMod_BG"			"108 111 114 0" // SRCDS cannot do transparency, so we gotta replace Blank with this.
+		"GMod_WhiteBlank"	"255 255 255 0"
+
+		"SteamLightGreen"			"157 194 80 255"
 		"AchievementsLightGrey"		"79 79 79 255"
 		"AchievementsDarkGrey"		"55 55 55 255"
 		"AchievementsInactiveFG"	"130 130 130 255"
@@ -38,41 +42,44 @@ Scheme
 	BaseSettings
 	{
 		// vgui_controls color specifications
-		Border.Bright					"200 200 200 196"	// the lit side of a control
-		Border.Dark						"40 40 40 196"		// the dark/unlit side of a control
-		Border.Selection				"0 0 0 196"			// the additional border color for displaying the default/selected button
+		Border.Bright					"200 200 200 255"	// the lit side of a control
+		Border.Dark						"40 40 40 198"		// the dark/unlit side of a control
+		Border.Selection				"Black"			// the additional border color for displaying the default/selected button
+		Border.DarkSolid				"40 40 40 255"
+		Border.Subtle					"80 80 80 255"
 
-		Button.TextColor				"White"
-		Button.BgColor					"Blank"
-		Button.ArmedTextColor			"White"
-		Button.ArmedBgColor				"Blank"				[$WIN32]
+		Button.TextColor				"82 82 82 255"
+		Button.BgColor					"227 227 227 255"
+		Button.ArmedTextColor			"46 114 178 255"
+		Button.ArmedBgColor				"240 240 240 255"	[$WIN32]
 		Button.ArmedBgColor				"190 115 0 255"		[$X360]
 		Button.DepressedTextColor		"White"
-		Button.DepressedBgColor			"Blank"
-		Button.FocusBorderColor			"Black"
+		Button.DepressedBgColor			"84 178 245 255"
+		Button.FocusBorderColor			"82 82 82 255"
 
 		CheckButton.TextColor			"White"
-		CheckButton.SelectedTextColor		"White"
-		CheckButton.BgColor			"TransparentBlack"
-		CheckButton.Border1  			"Border.Dark" 		// the left checkbutton border
-		CheckButton.Border2  			"Border.Bright"		// the right checkbutton border
-		CheckButton.Check			"White"	// color of the check itself
-		CheckButton.HighlightFgColor		"OffWhite"
+		CheckButton.SelectedTextColor	"White"
+		CheckButton.BgColor				"White"
+		CheckButton.Border1				"Border.Subtle" 		// the left checkbutton border
+		CheckButton.Border2				"Border.Subtle"		// the right checkbutton border
+		CheckButton.Check				"Black"	// color of the check itself
+		CheckButton.DisabledFgColor		"Black"	// color of the check itself when disabled
+		CheckButton.HighlightFgColor	"OffWhite"
 		CheckButton.ArmedBgColor		"Blank"
-		CheckButton.DepressedBgColor		"Blank"
-		CheckButton.DisabledBgColor	   	"TransparentBlack"
-				
-		ComboBoxButton.ArrowColor		"DullWhite"
-		ComboBoxButton.ArmedArrowColor	"White"
-		ComboBoxButton.BgColor			"Blank"
-		ComboBoxButton.DisabledBgColor	"Blank"
+		CheckButton.DepressedBgColor	"Blank"
+		CheckButton.DisabledBgColor		"180 180 180 255"
+
+		ComboBoxButton.ArrowColor		"81 81 81 255"
+		ComboBoxButton.ArmedArrowColor	"110 110 110 255"
+		ComboBoxButton.BgColor			"GMod_WhiteBlank"
+		ComboBoxButton.DisabledBgColor	"GMod_WhiteBlank"
 
 		Frame.TitleTextInsetX			16
 		Frame.ClientInsetX				8
 		Frame.ClientInsetY				6
-		Frame.BgColor					"160 160 160 128"	[$WIN32]
+		Frame.BgColor					"GMod_BG_Opaque"	[$WIN32]
 		Frame.BgColor					"80 80 80 192"		[$X360]
-		Frame.OutOfFocusBgColor			"160 160 160 32"	[$WIN32]
+		Frame.OutOfFocusBgColor			"97 100 102 240"	[$WIN32]
 		Frame.OutOfFocusBgColor			"80 80 80 192"		[$X360]
 		Frame.FocusTransitionEffectTime	"0.3"							// time it takes for a window to fade in/out on focus/out of focus
 		Frame.TransitionEffectTime		"0.3"				[$WIN32]	// time it takes for a window to fade in/out on open/close
@@ -81,19 +88,19 @@ Scheme
 		FrameGrip.Color1				"200 200 200 196"
 		FrameGrip.Color2				"0 0 0 196"
 		FrameTitleButton.FgColor		"200 200 200 196"
-		FrameTitleButton.BgColor		"Blank"
+		FrameTitleButton.BgColor		"GMod_BG"
 		FrameTitleButton.DisabledFgColor	"255 255 255 192"
-		FrameTitleButton.DisabledBgColor	"Blank"
+		FrameTitleButton.DisabledBgColor	"GMod_BG"
 		FrameSystemButton.FgColor		"Blank"
 		FrameSystemButton.BgColor		"Blank"
 		FrameSystemButton.Icon			""
 		FrameSystemButton.DisabledIcon	""
 		FrameTitleBar.Font				"UiBold"		[$WIN32]
 		FrameTitleBar.Font				"DefaultLarge"	[$WIN32]
-		FrameTitleBar.TextColor			"White"
-		FrameTitleBar.BgColor			"Blank"
-		FrameTitleBar.DisabledTextColor	"255 255 255 192"
-		FrameTitleBar.DisabledBgColor	"Blank"
+		FrameTitleBar.TextColor			"255 255 255 204"
+		FrameTitleBar.BgColor			"GMod_BG"
+		FrameTitleBar.DisabledTextColor	"255 255 255 91"
+		FrameTitleBar.DisabledBgColor	"GMod_BG"
 
 		GraphPanel.FgColor				"White"
 		GraphPanel.BgColor				"TransparentBlack"
@@ -102,85 +109,88 @@ Scheme
 		Label.TextColor					"OffWhite"
 		Label.TextBrightColor			"White"
 		Label.SelectedTextColor			"White"
-		Label.BgColor					"Blank"
-		Label.DisabledFgColor1			"117 117 117 255"
-		Label.DisabledFgColor2			"30 30 30 255"
+		Label.BgColor					"GMod_BG"
+		Label.DisabledFgColor1			"110 110 110 255"
+		Label.DisabledFgColor2			"50 50 50 255"
 
-		ListPanel.TextColor					"OffWhite"
+		ListPanel.TextColor					"Black"
 		ListPanel.TextBgColor				"Blank"
-		ListPanel.BgColor					"TransparentBlack"
-		ListPanel.SelectedTextColor			"Black"
-		ListPanel.SelectedBgColor			"Orange"
-		ListPanel.SelectedOutOfFocusBgColor	"255 155 0 128"
-		ListPanel.EmptyListInfoTextColor	"OffWhite"
+		ListPanel.BgColor					"White"
+		ListPanel.SelectedTextColor			"White"
+		ListPanel.SelectedBgColor			"0 168 255 204"
+		ListPanel.OutOfFocusSelectedTextColor	"Black"
+		ListPanel.SelectedOutOfFocusBgColor		"132 183 241 100"
+		ListPanel.EmptyListInfoTextColor	"Black"
 
-		Menu.TextColor					"White"
-		Menu.BgColor					"160 160 160 64"
-		Menu.ArmedTextColor				"Black"
-		Menu.ArmedBgColor				"Orange"
+		Menu.TextColor					"80 80 80 255"
+		Menu.BgColor					"233 233 233 255"
+		Menu.ArmedTextColor				"White"
+		Menu.ArmedBgColor				"132 183 241 255"
 		Menu.TextInset					"6"
 
 		Panel.FgColor					"DullWhite"
-		Panel.BgColor					"Blank"
+		Panel.BgColor					"GMod_BG"
 
 		ProgressBar.FgColor				"White"
 		ProgressBar.BgColor				"TransparentBlack"
 
-		PropertySheet.TextColor			"OffWhite"
-		PropertySheet.SelectedTextColor	"White"
+		PropertySheet.TextColor				"10 10 10 200"
+		PropertySheet.SelectedTextColor		"10 10 10 255"
+		PropertySheet.SelectedBgColor		"10 10 10 255"
 		PropertySheet.TransitionEffectTime	"0.25"	// time to change from one tab to another
+		PropertySheet.BgColor				"Black"
 
 		RadioButton.TextColor			"OffWhite"
 		RadioButton.SelectedTextColor	"White"
 
 		RichText.TextColor				"OffWhite"
 		RichText.BgColor				"TransparentBlack"
-		RichText.SelectedTextColor		"Black"
-		RichText.SelectedBgColor		"Orange"
+		RichText.SelectedTextColor		"White"
+		RichText.SelectedBgColor		"0 168 255 204"
 
-		ScrollBar.Wide					17
+		ScrollBar.Wide					15
 
-		ScrollBarButton.FgColor				"White"
-		ScrollBarButton.BgColor				"Blank"
-		ScrollBarButton.ArmedFgColor		"White"
-		ScrollBarButton.ArmedBgColor		"Blank"
-		ScrollBarButton.DepressedFgColor	"White"
-		ScrollBarButton.DepressedBgColor	"Blank"
+		ScrollBarButton.FgColor				"60 60 60 255"
+		ScrollBarButton.BgColor				"207 207 207 255"
+		ScrollBarButton.ArmedFgColor		"20 65 72 255"
+		ScrollBarButton.ArmedBgColor		"210 237 255 255"
+		ScrollBarButton.DepressedFgColor	"9 119 226 255"
+		ScrollBarButton.DepressedBgColor	"31 207 248 255"
 
-		ScrollBarSlider.FgColor				"Blank"			// nob color
-		ScrollBarSlider.BgColor				"255 255 255 64"	// slider background color
+		ScrollBarSlider.FgColor				"220 220 220 255"			// nob color
+		ScrollBarSlider.BgColor				"184 184 184 229"	// slider background color
 
-		SectionedListPanel.HeaderTextColor	"White"
+		SectionedListPanel.HeaderTextColor	"50 50 50 255"
 		SectionedListPanel.HeaderBgColor	"Blank"
-		SectionedListPanel.DividerColor		"Black"
-		SectionedListPanel.TextColor		"DullWhite"
-		SectionedListPanel.BrightTextColor	"White"
-		SectionedListPanel.BgColor			"TransparentBlack"
-		SectionedListPanel.SelectedTextColor			"Black"
-		SectionedListPanel.SelectedBgColor				"Orange"
+		SectionedListPanel.DividerColor		"0 0 0 150"
+		SectionedListPanel.TextColor		"10 10 10 255"
+		SectionedListPanel.BrightTextColor	"40 40 40 255"
+		SectionedListPanel.BgColor			"White"
+		SectionedListPanel.SelectedTextColor			"White"
+		SectionedListPanel.SelectedBgColor				"0 168 255 204"
 		SectionedListPanel.OutOfFocusSelectedTextColor	"Black"
-		SectionedListPanel.OutOfFocusSelectedBgColor	"255 155 0 128"
+		SectionedListPanel.OutOfFocusSelectedBgColor	"132 183 241 100"
 
-		Slider.NobColor				"108 108 108 255"
+		Slider.NobColor				"220 220 220 255"
 		Slider.TextColor			"180 180 180 255"
-		Slider.TrackColor			"31 31 31 255"
-		Slider.DisabledTextColor1	"117 117 117 255"
-		Slider.DisabledTextColor2	"30 30 30 255"
+		Slider.TrackColor			"184 184 184 229"
+		Slider.DisabledTextColor1	"110 110 110 255"
+		Slider.DisabledTextColor2	"50 50 50 255"
 
-		TextEntry.TextColor			"OffWhite"
-		TextEntry.BgColor			"TransparentBlack"
-		TextEntry.CursorColor		"OffWhite"
-		TextEntry.DisabledTextColor	"DullWhite"
-		TextEntry.DisabledBgColor	"Blank"
-		TextEntry.SelectedTextColor	"Black"
-		TextEntry.SelectedBgColor	"Orange"
-		TextEntry.OutOfFocusSelectedBgColor	"255 155 0 128"
+		TextEntry.TextColor			"10 10 10 255"
+		TextEntry.BgColor			"White"
+		TextEntry.CursorColor		"10 10 10 255"
+		TextEntry.DisabledTextColor	"128 128 128 255"
+		TextEntry.DisabledBgColor	"192 192 192 255"
+		TextEntry.SelectedTextColor	"10 10 10 255"
+		TextEntry.SelectedBgColor	"0 168 255 204"
+		TextEntry.OutOfFocusSelectedBgColor	"132 183 241 100"
 		TextEntry.FocusEdgeColor	"0 0 0 196"
 
 		ToggleButton.SelectedTextColor	"White"
 
-		Tooltip.TextColor			"0 0 0 196"
-		Tooltip.BgColor				"Orange"
+		Tooltip.TextColor			"110 102 60 255"
+		Tooltip.BgColor				"249 238 181 255"
 
 		TreeView.BgColor			"TransparentBlack"
 
@@ -193,7 +203,7 @@ Scheme
 		MainMenu.ArmedTextColor		"White"				[$X360]
 		MainMenu.DepressedTextColor	"192 186 80 255"
 		MainMenu.MenuItemHeight		"40"				[$WIN32]
-		MainMenu.MenuItemHeight			"22"				[$X360]
+		MainMenu.MenuItemHeight			"35"				[$X360]
 		MainMenu.MenuItemHeight_hidef	"32"				[$X360]
 		MainMenu.Inset				"32"
 		MainMenu.Backdrop			"0 0 0 156"
@@ -202,19 +212,19 @@ Scheme
 		Console.DevTextColor		"White"
 
 		NewGame.TextColor			"White"
-		NewGame.FillColor			"0 0 0 255"
-		NewGame.SelectionColor		"Orange"			[$WIN32]
-		NewGame.SelectionColor		"0 0 0 255"			[$X360]
+		NewGame.FillColor			"Black"
+		NewGame.SelectionColor		"Orange"	[$WIN32]
+		NewGame.SelectionColor		"Black"		[$X360]
 		NewGame.DisabledColor		"128 128 128 196"
 
 		MessageDialog.MatchmakingBG			"46 43 42 255"	[$X360]
 		MessageDialog.MatchmakingBGBlack			"22 22 22 255"	[$X360]
-		
+
 		MatchmakingMenuItemTitleColor			"200 184 151 255"	[$X360]
 		MatchmakingMenuItemDescriptionColor		"200 184 151 255"	[$X360]
 
 		"QuickListBGDeselected"		"AchievementsDarkGrey"
-	 	"QuickListBGSelected"           "AchievementsLightGrey"
+		"QuickListBGSelected"		"AchievementsLightGrey"
 	}
 
 	//////////////////////// BITMAP FONT FILES /////////////////////////////
@@ -260,11 +270,9 @@ Scheme
 		{
 			"1"
 			{
-				"name"		 "Lucida Console" [$WINDOWS]
-				"name"		 "Lucida Console" [$X360]
-				"name"		 "Verdana" [$POSIX]
+				"name"		"Lucida Console" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
 				"tall"		"14" [$LINUX]
-				"tall"		"11" [$OSX]
 				"tall"		 "10"
 				"tall_lodef" "15"
 				"tall_hidef" "20"
@@ -272,13 +280,12 @@ Scheme
 				"outline"	 "1"
 			}
 		}
-		//Console text font
 		"Default"
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
+				"name"		"Tahoma" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
 				"tall"		"16"
 				"weight"	"500"
 			}
@@ -287,8 +294,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana Bold" [$POSIX]
+				"name"		"Tahoma" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
 				"tall"		"16"
 				"weight"	"1000"
 			}
@@ -297,8 +304,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
+				"name"		"Tahoma" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
 				"tall"		"16"
 				"weight"	"500"
 				"underline" "1"
@@ -308,10 +315,11 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
-				"tall"		"12" [!$POSIX]
-				"tall"		"13" [$POSIX]
+				"name"		"Tahoma" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
+				"tall"		"12" [$WINDOWS]
+				"tall"		"14" [$OSX]
+				"tall"		"16" [$LINUX]
 				"weight"	"0"
 			}
 		}
@@ -319,8 +327,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
+				"name"		"Tahoma" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
 				"tall"		"13"
 				"weight"	"0"
 				"dropshadow" "1"
@@ -330,8 +338,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
+				"name"		"Tahoma" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
 				"tall"		"12"
 				"weight"	"0"
 			}
@@ -341,8 +349,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
+				"name"		"Tahoma" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
 				"tall"		"18"
 				"weight"	"0"
 			}
@@ -351,8 +359,8 @@ Scheme
 		{
 			"1"	[$WIN32]
 			{
-				"name"		"Tahoma" [!$POSIX]
-				"name"		"Verdana" [$POSIX]
+				"name"		"Tahoma" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
 				"tall"		"12"
 				"weight"	"1000"
 			}
@@ -389,22 +397,22 @@ Scheme
 		}
 		"MenuLarge"
 		{
-			"1"	[$POSIX]
+			"1"	[$LINUX]
 			{
 				"name"		"Helvetica Bold"
 				"tall"		"20"
 				"antialias" "1"
 			}
-			"1"	[$WIN32]
+			"1"	[!$LINUX]
 			{
-				"name"		"Segoe UI Light" 
+				"name"		"Segoe UI Light"
 				"tall"		"48"
-				"weight"	"200"
+				"weight"	"400"
 				"antialias" "1"
 			}
 			"1"	[$X360]
 			{
-				"name"		"Segoe UI Light"
+				"name"		"Verdana"
 				"tall"			"14"
 				"tall_hidef"	"20"
 				"weight"	"1200"
@@ -423,7 +431,7 @@ Scheme
 				"outline" "1"
 			}
 		}
-		
+
 		"AchievementTitleFontSmaller"
 		{
 			"1"
@@ -435,8 +443,8 @@ Scheme
 				//"outline" "1"
 			}
 		}
-		
-		
+
+
 		"AchievementDescriptionFont"
 		{
 			"1"
@@ -458,7 +466,7 @@ Scheme
 				"yres"	 "481 10000"
 			}
 		}
-		
+
 		GameUIButtons
 		{
 			"1"	[$X360]
@@ -477,12 +485,10 @@ Scheme
 		{
 			"1"
 			{
-				"name"		 "Lucida Console" [$WINDOWS]
-				"name"		 "Lucida Console" [$X360]
-				"name"		 "Verdana" [$POSIX]
-				"tall"		"11" [$OSX]
-				"tall"		"14" [$LINUX]
-				"tall"		"10"
+				"name"		"Lucida Console" [$WINDOWS]
+				"name"		"Verdana" [!$WINDOWS]
+				"tall"		"10" [$WINDOWS]
+				"tall"		"14" [!$WINDOWS]
 				"weight"	"500"
 			}
 		}
@@ -591,8 +597,8 @@ Scheme
 			{
 				"name"		 "Lucida Console" [$WINDOWS]
 				"name"		 "Lucida Console" [$X360]
-				"name"		 "Verdana" [$POSIX]
-				"tall"		"11" [$POSIX]
+				"name"		 "Verdana" [$LINUX]
+				"tall"		"11" [$LINUX]
 				"tall"		"10"
 				"weight"	"0"
 			}
@@ -610,10 +616,9 @@ Scheme
 			{
 				"name"		 "Lucida Console" [$WINDOWS]
 				"name"		 "Lucida Console" [$X360]
-				"name"		 "Verdana" [$OSX]
+				"name"		 "Lucida Console" [$OSX]
 				"name"		 "Courier" [$LINUX]
 				"tall"		"14" [$LINUX]
-				"tall"		"11" [$POSIX]
 				"tall"		"10"
 				"weight"	"0"
 				"dropshadow" "1"
@@ -640,8 +645,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$OSX]
-				"name"		"Verdana Italic" [$OSX]
+				"name"		"Tahoma"
 				"tall"		"16"
 				"weight"	"500"
 				"italic"	"1"
@@ -718,7 +722,7 @@ Scheme
 				"antialias"		"1"
 			}
 		}
-		
+
 		StatsTitle	[$WIN32]
 		{
 			"1"
@@ -730,7 +734,7 @@ Scheme
 				"antialias"		"1"
 			}
 		}
-		
+
 		StatsText	[$WIN32]
 		{
 			"1"
@@ -742,7 +746,7 @@ Scheme
 				"antialias"		"1"
 			}
 		}
-		
+
 		AchievementItemTitle	[$WIN32]
 		{
 			"1"
@@ -768,7 +772,7 @@ Scheme
 			}
 		}
 
-		
+
 		StatsPageText
 		{
 			"1"
@@ -781,7 +785,7 @@ Scheme
 				"antialias"		"1"
 			}
 		}
-		
+
 		AchievementItemTitleLarge	[$WIN32]
 		{
 			"1"
@@ -794,7 +798,7 @@ Scheme
 				"antialias"		"1"
 			}
 		}
-		
+
 		AchievementItemDescription	[$WIN32]
 		{
 			"1"
@@ -808,7 +812,7 @@ Scheme
 			}
 		}
 
-		
+
 		"ServerBrowserTitle"
 		{
 			"1"
@@ -869,7 +873,7 @@ Scheme
 				"antialias"	"1"
 			}
 		}
-	
+
 	}
 
 	//
@@ -878,28 +882,24 @@ Scheme
 	// describes all the border types
 	Borders
 	{
-		BaseBorder		DepressedBorder
+		BaseBorder		SubtleBorder
 		ButtonBorder	RaisedBorder
 		ComboBoxBorder	DepressedBorder
-		MenuBorder		RaisedBorder
+		MenuBorder		SubtleBorder
 		BrowserBorder	DepressedBorder
 		PropertySheetBorder	RaisedBorder
 
 		FrameBorder
 		{
 			// rounded corners for frames
-			"backgroundtype" "2"
-		}
+			//"backgroundtype" "2"
 
-		DepressedBorder
-		{
-			"inset" "0 0 1 1"
 			Left
 			{
 				"1"
 				{
-					"color" "Border.Dark"
-					"offset" "0 1"
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
 				}
 			}
 
@@ -907,8 +907,8 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Bright"
-					"offset" "1 0"
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
 				}
 			}
 
@@ -916,7 +916,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -925,20 +925,100 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Bright"
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		SubtleBorder
+		{
+			"inset" "0 0 0 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.Subtle"
+					"offset" "0 0"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.Subtle"
+					"offset" "0 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Subtle"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.Subtle"
+					"offset" "0 0"
+				}
+			}
+		}
+
+		DepressedBorder
+		{
+			"inset" "0 0 0 0"
+			Left
+			{
+				"1"
+				{
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
+				}
+			}
+
+			Right
+			{
+				"1"
+				{
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
+				}
+			}
+
+			Bottom
+			{
+				"1"
+				{
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
 		}
 		RaisedBorder
 		{
-			"inset" "0 0 1 1"
+			"inset" "0 0 0 0"
 			Left
 			{
 				"1"
 				{
-					"color" "Border.Bright"
-					"offset" "0 1"
+					"color" "Border.Subtle"
+					"offset" "0 0"
 				}
 			}
 
@@ -946,7 +1026,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.Subtle"
 					"offset" "0 0"
 				}
 			}
@@ -955,8 +1035,8 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Bright"
-					"offset" "0 1"
+					"color" "Border.Subtle"
+					"offset" "0 0"
 				}
 			}
 
@@ -964,12 +1044,12 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.Subtle"
 					"offset" "0 0"
 				}
 			}
 		}
-		
+
 		TitleButtonBorder
 		{
 			"backgroundtype" "0"
@@ -987,14 +1067,13 @@ Scheme
 
 		ScrollBarButtonBorder
 		{
-			"inset" "2 2 0 0" [!$OSX]
-			"inset" "-3 2 0 0" [$OSX]
+			"inset" "0 0 0 0"
 			Left
 			{
 				"1"
 				{
-					"color" "Border.Bright"
-					"offset" "0 1"
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
 				}
 			}
 
@@ -1002,8 +1081,8 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
-					"offset" "1 0"
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
 				}
 			}
 
@@ -1011,7 +1090,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Bright"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -1020,22 +1099,21 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
 		}
-		
+
 		ScrollBarButtonDepressedBorder
 		{
-			"inset" "2 2 0 0" [!$OSX]
-			"inset" "-3 2 0 0" [$OSX]
+			"inset" "0 0 0 0"
 			Left
 			{
 				"1"
 				{
-					"color" "Border.Dark"
-					"offset" "0 1"
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
 				}
 			}
 
@@ -1043,8 +1121,8 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Bright"
-					"offset" "1 0"
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
 				}
 			}
 
@@ -1052,7 +1130,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -1061,7 +1139,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Bright"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -1069,44 +1147,37 @@ Scheme
 
 		TabBorder
 		{
-			"inset" "0 0 1 1"
-			Left
+			"inset" "1 1 1 1"
+
+			render
 			{
-				"1"
-				{
-					"color" "Border.Bright"
-					"offset" "0 1"
-				}
+				"0" "fill( x0, y0, x1, y1, Black )"
 			}
 
-			Right
+			render_bg
 			{
-				"1"
-				{
-					"color" "Border.Dark"
-					"offset" "1 0"
-				}
-			}
-
-			Top
-			{
-				"1"
-				{
-					"color" "Border.Bright"
-					"offset" "0 0"
-				}
+				"0" "fill( x0, y0, x1, y1, Orange )"
 			}
 
 		}
 
 		TabActiveBorder
 		{
-			"inset" "0 0 1 0"
+			"inset" "1 1 1 1"
 			Left
 			{
 				"1"
 				{
-					"color" "Border.Bright"
+					"color" "Border.Subtle"
+					"offset" "0 0"
+				}
+			}
+
+			Top
+			{
+				"1"
+				{
+					"color" "Border.Subtle"
 					"offset" "0 0"
 				}
 			}
@@ -1115,16 +1186,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
-					"offset" "1 0"
-				}
-			}
-
-			Top
-			{
-				"1"
-				{
-					"color" "Border.Bright"
+					"color" "Border.Subtle"
 					"offset" "0 0"
 				}
 			}
@@ -1139,7 +1201,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -1148,8 +1210,8 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
-					"offset" "1 0"
+					"color" "Border.DarkSolid"
+					"offset" "0 0"
 				}
 			}
 
@@ -1157,7 +1219,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -1166,7 +1228,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -1175,18 +1237,13 @@ Scheme
 		// this is the border used for default buttons (the button that gets pressed when you hit enter)
 		ButtonKeyFocusBorder
 		{
-			"inset" "0 0 1 1"
+			"inset" "0 0 0 0"
 			Left
 			{
 				"1"
 				{
 					"color" "Border.Selection"
 					"offset" "0 0"
-				}
-				"2"
-				{
-					"color" "Border.Bright"
-					"offset" "0 1"
 				}
 			}
 			Top
@@ -1196,11 +1253,6 @@ Scheme
 					"color" "Border.Selection"
 					"offset" "0 0"
 				}
-				"2"
-				{
-					"color" "Border.Bright"
-					"offset" "1 0"
-				}
 			}
 			Right
 			{
@@ -1209,22 +1261,12 @@ Scheme
 					"color" "Border.Selection"
 					"offset" "0 0"
 				}
-				"2"
-				{
-					"color" "Border.Dark"
-					"offset" "1 0"
-				}
 			}
 			Bottom
 			{
 				"1"
 				{
 					"color" "Border.Selection"
-					"offset" "0 0"
-				}
-				"2"
-				{
-					"color" "Border.Dark"
 					"offset" "0 0"
 				}
 			}
@@ -1232,12 +1274,12 @@ Scheme
 
 		ButtonDepressedBorder
 		{
-			"inset" "2 1 1 1"
+			"inset" "0 0 0 0"
 			Left
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.DarkSolid"
 					"offset" "0 1"
 				}
 			}
@@ -1246,7 +1288,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Bright"
+					"color" "Border.DarkSolid"
 					"offset" "1 0"
 				}
 			}
@@ -1255,7 +1297,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Dark"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -1264,7 +1306,7 @@ Scheme
 			{
 				"1"
 				{
-					"color" "Border.Bright"
+					"color" "Border.DarkSolid"
 					"offset" "0 0"
 				}
 			}
@@ -1277,7 +1319,7 @@ Scheme
 	CustomFontFiles
 	{
 		"1"		"resource/HALFLIFE2.ttf"
-		"2"		"resource/HL2EP2.ttf"	
+		"2"		"resource/HL2EP2.ttf"
 		"3"		"resource/marlett.ttf"
 	}
 }
